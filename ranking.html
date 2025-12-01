@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CodeMaster Academy — Ranking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">CodeMaster Academy</div>
+    <nav class="topnav">
+      <a href="index.html" class="navlink">Início</a>
+      <a href="teoria.html" class="navlink">Teoria</a>
+      <a href="ranking.html" class="navlink active">Ranking</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>🏆 Ranking Local</h1>
+    <p>Os 10 melhores resultados salvos no seu navegador (localStorage).</p>
+    <ul id="rankingList" class="ranking-list"></ul>
+    <button onclick="clearRanking()" class="btn ghost">Limpar ranking</button>
+    <a href="index.html"><button class="btn primary">Voltar</button></a>
+  </main>
+
+  <script src="ranking.js"></script>
+</body>
+</html>
