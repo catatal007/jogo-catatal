@@ -1,0 +1,80 @@
+/* style.css — tema futurista clean */
+:root{
+  --bg-1:#040511;
+  --bg-2:#071a2b;
+  --panel: rgba(255,255,255,0.03);
+  --accent: #00d4ff;
+  --accent-2: #ff4b5c;
+  --muted: #9dbacb;
+  --glass: rgba(255,255,255,0.04);
+  --radius: 12px;
+  --maxwidth:1100px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  color:#e8f8ff;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,0.03);
+  background: linear-gradient(90deg, rgba(0,0,0,0.2), rgba(0,0,0,0.1));
+}
+.brand{font-weight:800;color:var(--accent);font-size:18px}
+.topnav .navlink{color:var(--muted);text-decoration:none;margin-left:14px;padding:8px;border-radius:8px}
+.topnav .navlink.active, .topnav .navlink:hover{background:var(--glass);color:#fff}
+
+.main{max-width:var(--maxwidth);margin:28px auto;padding:0 18px}
+.hero{display:flex;gap:28px;align-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:26px;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
+.hero-catatal{width:220px;border-radius:12px;filter:drop-shadow(0 8px 30px rgba(0,212,255,0.08))}
+.hero-text h1{margin:0 0 8px 0;font-size:28px;color:#fff}
+.hero-text p{color:var(--muted);margin:0 0 14px 0}
+.hero-actions .btn{margin-right:10px}
+
+/* utilities */
+.hidden{display:none}
+
+/* controls and panel */
+.game-area{margin-top:22px}
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:14px;flex-wrap:wrap}
+.controls label{color:var(--muted);font-size:14px}
+.controls select{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.btn{padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#002;cursor:pointer;font-weight:700}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#00ffa6);color:#022}
+
+.score{margin-left:auto;color:var(--muted);font-weight:700}
+
+/* panel */
+.panel{display:flex;gap:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+.panel-catatal{width:140px;border-radius:10px}
+.panel-body{flex:1}
+.qTitle{margin:0}
+.explain{color:var(--muted);margin-bottom:8px}
+.question{font-size:18px;font-weight:700;margin:10px 0}
+.choices{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.choices button{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:10px;text-align:left;color:#e6f7ff;cursor:pointer}
+.choices button:hover{box-shadow:0 8px 20px rgba(0,212,255,0.06);transform:translateY(-2px)}
+.text-answer{display:flex;gap:8px;margin-top:8px}
+.text-answer input{flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.feedback{margin-top:10px;color:var(--muted);padding:10px;border-radius:8px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
+
+/* theory and container pages */
+.container{max-width:var(--maxwidth);margin:28px auto;padding:18px}
+.theory-card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);margin-bottom:12px}
+pre{background:#001524;padding:12px;border-radius:10px;color:#bfeafb;overflow:auto}
+
+/* ranking list */
+.ranking-list{list-style:none;padding:0}
+.ranking-list li{background:rgba(0,0,0,0.25);padding:10px;border-radius:8px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.02)}
+
+/* responsive */
+@media(max-width:860px){
+  .hero{flex-direction:column;align-items:center}
+  .controls{flex-direction:column;align-items:flex-start}
+  .score{margin-left:0}
+}
