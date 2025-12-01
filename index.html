@@ -1,37 +1,80 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz do Catatal</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CodeMaster Academy</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="topbar">
+    <div class="brand">CodeMaster Academy</div>
+    <nav class="topnav">
+      <a href="index.html" class="navlink">Início</a>
+      <a href="teoria.html" class="navlink">Teoria</a>
+      <a href="ranking.html" class="navlink">Ranking</a>
+    </nav>
+  </header>
 
-    <header>
-        <h1>Quiz do Catatal</h1>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="explicacoes.html">O que cai nas perguntas?</a>
-        </nav>
-    </header>
+  <main class="main">
+    <section class="hero">
+      <img src="catatal/normal.png" alt="Catatal" class="hero-catatal">
+      <div class="hero-text">
+        <h1>Aprenda Programação, Lógica e Matemática com o Catatal</h1>
+        <p>Escolha um nível e comece a treinar. Use "IA" se você configurar a OpenAI via Netlify (opcional).</p>
+        <div class="hero-actions">
+          <button id="btnStart" class="btn primary">🎮 Começar</button>
+          <a href="teoria.html"><button class="btn ghost">📘 Estudar Teoria</button></a>
+        </div>
+      </div>
+    </section>
 
-    <main>
+    <section id="gameArea" class="game-area hidden">
+      <div class="controls">
+        <label>Matéria:
+          <select id="subjectSelect">
+            <option value="math">Matemática</option>
+            <option value="logic">Lógica</option>
+            <option value="web">HTML/CSS</option>
+          </select>
+        </label>
 
-        <section class="robot-area">
-            <img id="catatal" src="assets/img/catatal_neutro.png" alt="Catatal">
-        </section>
+        <label>Nível:
+          <select id="levelSelect">
+            <option value="easy">Fácil</option>
+            <option value="medium">Médio</option>
+            <option value="hard">Difícil</option>
+          </select>
+        </label>
 
-        <section class="quiz-area">
-            <h2 id="pergunta">Carregando pergunta...</h2>
+        <label>Origem:
+          <select id="modeSelect">
+            <option value="auto">Automático (offline)</option>
+            <option value="ai">IA (OpenAI via Netlify)</option>
+          </select>
+        </label>
 
-            <div id="opcoes"></div>
+        <button id="btnNew" class="btn">Nova pergunta</button>
+        <div class="score">Pontos: <span id="score">0</span></div>
+      </div>
 
-            <p id="resultado"></p>
-        </section>
+      <div class="panel">
+        <img id="catatalHero" src="catatal/normal.png" alt="Catatal" class="panel-catatal">
+        <div class="panel-body">
+          <h2 id="qTitle">—</h2>
+          <p id="qExplain" class="explain">Selecione "Nova pergunta" para começar.</p>
+          <div id="qText" class="question">—</div>
+          <div id="qChoices" class="choices"></div>
+          <div id="qInput" class="text-answer" style="display:none;">
+            <input id="textAnswer" placeholder="Digite sua resposta">
+            <button id="btnCheckText" class="btn primary">Verificar</button>
+          </div>
+          <div id="feedback" class="feedback"></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    </main>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
